@@ -1,27 +1,26 @@
 #include "sort.h"
 
 /**
- * locate_min - Locatin the min From Current index in the array
- * @array: The Array to be Searched
- * @index: Starting Index of The Search
- * @size: The Size of The Array
- * Return: (int) index of min if found or
- * same given index if index is the min
+ * locate_min - function to locate smallest array index
+ * @array: an Array
+ * @index: 1st  Index
+ * @size: array Size
+ * Return: the index
  */
 
 int locate_min(int *array, int index, size_t size)
 {
-	int min, idx_min;
-	int i;
+	int tiny, idx_min;
+	int a;
 
-	min = array[index];
+	tiny = array[index];
 	idx_min = index;
-	for (i = index; i < (int)size; i++)
+	for (a = index; a < (int)size; a++)
 	{
-		if (array[i] < min)
+		if (array[a] < tiny)
 		{
-			min = array[i];
-			idx_min = i;
+			tiny = array[a];
+			idx_min = a;
 		}
 	}
 	if (idx_min == index)
@@ -30,25 +29,25 @@ int locate_min(int *array, int index, size_t size)
 }
 
 /**
- * selection_sort - Implementation of selection Sort Algrithme
- * @array: Array to sort type int *
- * @size: The Size of The Given Array
+ * selection_sort - implements the sorted algorithm
+ * @array: An array
+ * @size: an int
  *
- * Return: (Void) Sorted Array
+ * Return: the Sorted Array
  */
 void selection_sort(int *array, size_t size)
 {
-	int i;
-	int min, tmp;
+	int a;
+	int tiny, tmp;
 
-	for (i = 0; i < (int)size; i++)
+	for (a = 0; a < (int)size; a++)
 	{
-		min = locate_min(array, i, size);
-		if (min != -1)
+		tiny = locate_min(array, a, size);
+		if (tiny != -1)
 		{
-			tmp = array[i];
-			array[i] = array[min];
-			array[min] = tmp;
+			tmp = array[a];
+			array[a] = array[tiny];
+			array[tiny] = tmp;
 			print_array(array, size);
 		}
 	}
