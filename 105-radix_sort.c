@@ -26,7 +26,7 @@ void radix_sort(int *array, size_t size)
 }
 
 /**
- * count_sort_LSD – uses LSD to sort count
+ * count_sort_LSD - uses LSD to sort count
  * @array: an array
  * @size: array size
  * @lsd: least num
