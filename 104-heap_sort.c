@@ -40,9 +40,9 @@ void heap_sort(int *array, size_t size)
 		stupify(array, size, i, size);
 	for (i = size - 1; i >= 0; i--)
 	{
-		tmp = array[0];
+		temp = array[0];
 		array[0] = array[i];
-		array[i] = tmp;
+		array[i] = temp;
 		if (i > 0)
 			print_array(array, size);
 		stupify(array, i, 0, size);
