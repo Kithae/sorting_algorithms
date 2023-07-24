@@ -20,7 +20,7 @@ void swap(int *a, int *b)
  * @low: int
  * @high: int
  * @size: array size
- * Return: pivot address 
+ * Return: pivot address
  */
 int partition(int *array, int low, int high, size_t size)
 {
@@ -50,7 +50,7 @@ int partition(int *array, int low, int high, size_t size)
 	}
 }
 /**
- * hoare_qsort – Sorts  an Array recursively
+ * hoare_qsort - Sorts  an Array recursively
  * @array: the array
  * @low: min array value
  * @high: max array value
