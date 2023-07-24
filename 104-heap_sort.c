@@ -32,19 +32,19 @@ void stupify(int *array, int heap, int i, int size)
 
 void heap_sort(int *array, size_t size)
 {
-	int a = size / 2 - 1, temp;
+	int i = size / 2 - 1, temp;
 
 	if (array == NULL || size < 2)
 		return;
-	for (; a >= 0; a--)
-		stupify(array, size, a, size);
-	for (a = size - 1; a >= 0; a--)
+	for (; i >= 0; i--)
+		stupify(array, size, i, size);
+	for (i = size - 1; i >= 0; i--)
 	{
 		tmp = array[0];
-		array[0] = array[a];
-		array[a] = tmp;
-		if (a > 0)
+		array[0] = array[i];
+		array[i] = tmp;
+		if (i > 0)
 			print_array(array, size);
-		stupify(array, a, 0, size);
+		stupify(array, i, 0, size);
 	}
 }
