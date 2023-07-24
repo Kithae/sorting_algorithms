@@ -10,17 +10,17 @@
 
 void stupify(int *array, int heap, int i, int size)
 {
-	int a = i, left = 2 * i + 1, right = 2 * i + 2, t;
+	int stup = i, left = 2 * i + 1, right = 2 * i + 2, t;
 
-	if (left < heap && array[left] > array[a])
-		a = left;
-	if (right < heap && array[right] > array[a])
-		a = right;
-	if (a != i)
+	if (left < heap && array[left] > array[stup])
+		stup = left;
+	if (right < heap && array[right] > array[stup])
+		stup = right;
+	if (stup != i)
 	{
-		t = array[i], array[i] = array[lar], array[lar] = t;
+		t = array[i], array[i] = array[stup], array[stup] = t;
 		print_array(array, size);
-		stupify(array, heap, a, size);
+		stupify(array, heap, stup, size);
 	}
 }
 
@@ -32,20 +32,19 @@ void stupify(int *array, int heap, int i, int size)
 
 void heap_sort(int *array, size_t size)
 {
-	int b = size / 2 - 1, temp;
+	int a = size / 2 - 1, temp;
 
 	if (array == NULL || size < 2)
 		return;
-	for (; b >= 0; b--)
-		stupify(array, size, b, size);
-	for (b = size - 1; b >= 0; b--)
+	for (; a >= 0; a--)
+		stupify(array, size, a, size);
+	for (a = size - 1; a >= 0; a--)
 	{
-		temp = array[0];
-		array[0] = array[b];
-		array[b] = temp;
-		if (b > 0)
+		tmp = array[0];
+		array[0] = array[a];
+		array[a] = tmp;
+		if (a > 0)
 			print_array(array, size);
-		stupify(array, b, 0, size);
+		stupify(array, a, 0, size);
 	}
-
 }
